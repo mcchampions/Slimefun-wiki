@@ -1,0 +1,47 @@
+首先我们创建个main.java,这个就是我们的主类，我们上次在plugin.yml提到的主类可不能直接输入main,我们得在它面前输入包结构，为什么？
+这个不用管，因为是给新手看的，所以不管这些，而且我们针对的是粘液科技附属开发。
+我们在把下面一段复制到这个文件：
+```java
+package 这里输入包结构;
+
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+
+public class main extends JavaPlugin implements SlimefunAddon {
+
+  @Override
+  public void onEnable() {
+    getLogger().info("XX插件已加载!");
+  }
+  @Override
+  public void onDisable() {
+	  getLogger().info("XX插件已卸载!");
+	}
+  
+  public String getBugTrackerURL() {
+    // 这里返回如果有错误联系你的链接
+    // 没有请设置为null(就是无的意思)
+    return null;
+  }
+    
+  public JavaPlugin getJavaPlugin() {
+    return this;
+  }
+}
+```
+现在,你可能迫不及待的想知道这个代码代表的是什么,不过我想,代码内容关看大部分人应该都看得懂,而且这不是我们的重点。
+import 代表你要导入的外部类，就是别的插件的类，如果你觉得需要使用一些别人所开发的功能就可以使用，但我不推荐你导入除粘液科技
+和服务端除外的其他外部类，因为请记住，你的目标是制作一个粘液科技的附属插件，所以我不推荐。
+导入的包怎么看啊，这些有关的我也不会做详细的说明，我会汉化粘液科技的javadoc贴着，关于spigot的javadoc鉴于已有团队汉化便不再
+汉化（开玩笑，就算没人汉化我也不去汉化）。
+----
+来了来了，说了那么多我们都没讲到点上，现在就开始吧。
+待更新
